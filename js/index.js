@@ -14,12 +14,16 @@ function operClicked(ev) {
     display.value += ev.target.innerText;
 }
 
-const deleteButton = document.querySelector('.delete');
-deleteButton.addEventListener('click', () => {
-  display.value.clear();
-  display.value.updateDisplay();
-});
+const deleteButton = document.querySelector('.delete').addEventListener('click', deleteClicked);
+
+function deleteClicked() {
+   display.value ='';
+}
+
+
 const equal = document.querySelector('.equal');
 equal.addEventListener('click', () => {
     display.value = eval(display.value);
 });
+
+
